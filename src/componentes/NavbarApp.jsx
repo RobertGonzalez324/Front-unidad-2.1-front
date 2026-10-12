@@ -15,7 +15,7 @@ function NavbarApp({
   ];
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 shadow-sm">
+    <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm mb-4">
       <Container>
         <Navbar.Brand
           href="#"
@@ -23,14 +23,14 @@ function NavbarApp({
             e.preventDefault();
             cambiarVista("inicio");
           }}
-          style={{ cursor: "pointer" }}
+          className="text-white fw-bold text-lg"
         >
           UVM Shop
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="navbar-app" />
+        <Navbar.Toggle aria-controls="navbar-app" className="border-0" />
         <Navbar.Collapse id="navbar-app">
-          <Nav className="me-auto">
+          <Nav className="me-auto gap-2">
             {menuItems.map((item) => (
               <Nav.Link
                 key={item.id}
@@ -40,6 +40,11 @@ function NavbarApp({
                   e.preventDefault();
                   cambiarVista(item.id);
                 }}
+                className={
+                  vistaActual === item.id
+                    ? "text-white fw-semibold"
+                    : "text-slate-300 hover:text-white"
+                }
               >
                 {item.label}
               </Nav.Link>
@@ -53,15 +58,16 @@ function NavbarApp({
                 cerrarSesion();
                 cambiarVista("inicio");
               }}
+              className="border-slate-300 text-white hover:bg-white hover:text-slate-900"
             >
               Cerrar sesión
             </Button>
           ) : (
             <ButtonGroup>
-              <Button variant="primary" onClick={abrirModalLogin}>
+              <Button variant="primary" onClick={abrirModalLogin} className="px-4">
                 Iniciar sesión
               </Button>
-              <Button variant="outline-light" onClick={abrirModalRegistro}>
+              <Button variant="outline-light" onClick={abrirModalRegistro} className="px-4">
                 Registrarse
               </Button>
             </ButtonGroup>

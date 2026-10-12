@@ -1,4 +1,7 @@
-/* src/index.css */
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
 :root {
   --primary-color: #007bff;
   --secondary-color: #6c757d;
@@ -11,7 +14,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
+  background-color: #f8fafc;
   margin: 0;
   padding: 0;
   color: var(--text-color);
@@ -28,40 +31,9 @@ ul:not(.navbar-nav):not(.navbar-nav *) {
   padding: 0;
 }
 
-li:not(.nav-item):not(.navbar-item):not(.list-group-item) {
-  background-color: white;
-  margin: 10px 0;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-}
-
 img {
   max-width: 100px;
   border-radius: 8px;
-}
-
-button:not(.navbar-toggle):not(.navbar-toggler):not([class*="navbar"]):not([class*="btn"]):not([class*="modal"]):not([class*="close"]) {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:not(.navbar-toggle):not(.navbar-toggler):not([class*="navbar"]):not([class*="btn"]):not([class*="modal"]):not([class*="close"]):hover {
-  background-color: #218838;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 20px auto;
-  width: 350px;
 }
 
 input,
