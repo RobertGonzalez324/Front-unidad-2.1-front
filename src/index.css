@@ -1,0 +1,78 @@
+/* src/index.css */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --accent-color: #28a745;
+  --text-color: #212529;
+  --background-color: #f4f4f9;
+  --light-gray: #e9ecef;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+ul:not(.navbar-nav):not(.navbar-nav *) {
+  list-style-type: none;
+  padding: 0;
+}
+
+li:not(.nav-item):not(.navbar-item):not(.list-group-item) {
+  background-color: white;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+img {
+  max-width: 100px;
+  border-radius: 8px;
+}
+
+button:not(.navbar-toggle):not(.navbar-toggler):not([class*="navbar"]):not([class*="btn"]):not([class*="modal"]):not([class*="close"]) {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:not(.navbar-toggle):not(.navbar-toggler):not([class*="navbar"]):not([class*="btn"]):not([class*="modal"]):not([class*="close"]):hover {
+  background-color: #218838;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px auto;
+  width: 350px;
+}
+
+input,
+select {
+  padding: 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
