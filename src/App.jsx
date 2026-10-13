@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import AuthContext from "./context/AuthContext";
 import { AuthProvider } from "./context/AuthContext";
 import NavbarApp from "./componentes/NavbarApp";
+import SidebarApp from "./componentes/SidebarApp";
 import ModalLogin from "./componentes/ModalLogin";
 import ModalRegistro from "./componentes/ModalRegistro";
 import InicioView from "./views/InicioView";
@@ -74,14 +75,18 @@ function AppContent() {
   return (
     <>
       <NavbarApp
-        vistaActual={vistaActual}
-        cambiarVista={cambiarVista}
         usuarioAutenticado={usuarioAutenticado}
         cerrarSesion={logout}
         abrirModalLogin={() => setMostrarModalLogin(true)}
         abrirModalRegistro={() => setMostrarModalRegistro(true)}
       />
-      {renderVista()}
+
+      <div className="d-flex" style={{ minHeight: "calc(100vh - 72px)" }}>
+        <SidebarApp vistaActual={vistaActual} cambiarVista={cambiarVista} />
+        <div className="flex-grow-1" style={{ background: "#f8fafc" }}>
+          {renderVista()}
+        </div>
+      </div>
 
       <ModalLogin
         mostrar={mostrarModalLogin}
