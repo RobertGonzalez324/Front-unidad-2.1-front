@@ -177,11 +177,14 @@ const Inicio = () => {
 
       {usuarioAutenticado && (
         <>
-          <div className="text-center mb-4">
+          <div className="text-center mb-4 d-flex justify-content-center gap-3 flex-wrap">
             <Button onClick={abrirModalPerfil}>Ver/Editar Perfil</Button>
-          </div>
-          <div className="text-center mb-4">
-            <Button onClick={obtenerFavoritos}>Ver Favoritos</Button>
+            <Button variant="success" onClick={abrirModalParaCrearProducto}>
+              Vender producto
+            </Button>
+            <Button variant="outline-primary" onClick={obtenerFavoritos}>
+              Ver Favoritos
+            </Button>
           </div>
         </>
       )}

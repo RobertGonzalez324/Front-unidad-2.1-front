@@ -12,7 +12,7 @@ const FormularioProducto = ({
 }) => {
   const [producto, setProducto] = useState({
     nombre: "",
-    categoria: "camisas",
+    categoria: "ropa",
     descripcion: "",
     precio: 0,
     cantidad: 0,
@@ -70,7 +70,7 @@ const FormularioProducto = ({
   const limpiarFormulario = () => {
     setProducto({
       nombre: "",
-      categoria: "camisas",
+      categoria: "ropa",
       descripcion: "",
       precio: 0,
       cantidad: 0,
@@ -106,10 +106,10 @@ const FormularioProducto = ({
               value={producto.categoria}
               onChange={manejarCambio}
             >
-              <option value="camisas">Camisas</option>
-              <option value="pantalones">Pantalones</option>
-              <option value="zapatos">Zapatos</option>
-              <option value="gorras">Gorras</option>
+              <option value="ropa">Ropa</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="comida">Comida</option>
+              <option value="otros">Otros</option>
             </Form.Control>
           </Form.Group>
 

@@ -23,10 +23,10 @@ const FiltroProductos = ({
         className="mb-4"
       >
         <option value="">Todas las Categorías</option>
-        <option value="camisas">Camisas</option>
-        <option value="pantalones">Pantalones</option>
-        <option value="zapatos">Zapatos</option>
-        <option value="gorras">Gorras</option>
+        <option value="ropa">Ropa</option>
+        <option value="tecnologia">Tecnología</option>
+        <option value="comida">Comida</option>
+        <option value="otros">Otros</option>
       </Form.Select>
     </>
   );
