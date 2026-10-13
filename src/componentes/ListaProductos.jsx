@@ -62,8 +62,10 @@ const ListaProductos = ({
                   Agregar a Favoritos
                 </Button>
               )}
-              {rolUsuario === "admin" && (
-                <>
+              {(usuarioAutenticado &&
+                (rolUsuario === "admin" ||
+                  String(producto.vendedor) === String(usuarioAutenticado._id))) && (
+                <div className="d-flex gap-2 mt-3">
                   <Button
                     variant="primary"
                     onClick={() => abrirModalParaEditarProducto(producto)}
@@ -72,12 +74,11 @@ const ListaProductos = ({
                   </Button>
                   <Button
                     variant="danger"
-                    className="ml-2"
                     onClick={() => eliminarProducto(producto._id)}
                   >
                     Eliminar
                   </Button>
-                </>
+                </div>
               )}
             </Card.Body>
           </Card>
